@@ -1,0 +1,1031 @@
+/*******************/
+/* General Styling */
+/*******************/
+
+body {
+  margin: 0px;
+  background-color:  #efcca2;
+}
+h1,h2{
+  font-family: 'Montserrat', sans-serif;
+}
+p,a{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+/*********************/
+/**** Grid Styling ***/
+/*********************/
+
+/*Creating a basic grid area for the entire grid class. Then creating a nested grid within*/
+.grid{
+  display: grid;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  /*Making sure that the columns have 100% width*/
+  grid-template-columns: 100%;
+  /*assigning the rows to auto*/
+  grid-template-rows: auto;
+}
+
+
+/*Styling the header*/
+/*adding header to the grid area*/
+.grid header{
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /*This assures that the header doesnt disappear as we scroll down*/
+  position: fixed;
+  background-color:  #efcca2;
+}
+/*Sending the menu to the far right side of the page*/
+header div{
+  flex-grow: 1;
+  height: 100px;
+}
+/*makes the logo 100% height of the header*/
+header div img{
+  padding: 5px;
+  height:90%;
+  width: auto;
+}
+/*styling the navigation*/
+header nav {
+  /*adding space between the nav and the end of the page*/
+  padding: 35px;
+}
+/*make the nav horizontal and remove the styling*/
+header nav ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+/*Adding some space between the nav buttons*/
+header nav ul li{
+  padding: 0px 25px;
+}
+/*removing the underline and changing the text color to black*/
+header nav ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+/*Styling the main section*/
+/*adding the main to grid-area*/
+.grid main{
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "masthead masthead"
+    "row1 row1"
+    "row2 row2"
+    "row3 row3"
+    "footer .";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 920px 600px 550px 350px 10px;
+}
+/*add the masthead to the grid-area*/
+.grid main section:nth-child(1){
+  grid-area: masthead;
+  height: 100vh;
+  width: auto;
+  background-image: url('../img/banner.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*Adding our first row to the grid and seperating it into two halves one for img one for aside*/
+.grid main section:nth-child(2){
+  grid-area: row1;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: Start;
+  height: 600px;
+  width:  auto;
+  margin-top: 169px;
+}
+.grid main section:nth-child(2) img{
+  height:50%;
+  width: auto;
+  padding-left: 150px;
+  padding-top:10px;
+}
+.grid main section:nth-child(2) aside{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+}
+/*styling h2*/
+.grid main section:nth-child(2) aside h2{
+  Color: red;
+  font-size: 50px;
+  /* margin-top: 10px; */
+  padding-right: 10px;
+}
+/*styling the p element*/
+.grid main section:nth-child(2) aside p{
+  font-size: 20px;
+  padding-right: 100px;
+  text-align: start;
+  margin-top:  -10px;
+}
+/*third section styling, assigning grid area*/
+.grid main section:nth-child(3){
+  grid-area: row2;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: start;
+  margin-top: 50px;
+  height:  100%;
+  width:  auto;
+}
+/*Styling the aside element*/
+.grid main section:nth-child(3) aside{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding-left: 150px;
+  height: auto;
+  padding-top: 100px;
+}
+/*Styling the h2 element to make font bigger*/
+.grid main section:nth-child(3) aside h2{
+  Color: red;
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: -10px;
+}
+/*styling the p element*/
+.grid main section:nth-child(3) aside p{
+  font-size: 20px;
+  text-align: start;
+}
+/*Styling the div to take flex*/
+.grid main section:nth-child(3) div{
+  display: flex;
+  jutify-content: center;
+}
+/*Styling the img to be more centered*/
+.grid main section:nth-child(3) div img{
+  display: flex;
+  height: 100%;
+  width: auto;
+  padding-left: 267px;
+}
+/*Styling the 4th child section*/
+.grid main section:nth-child(4){
+  padding-top: 52px;
+  grid-area: row3;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  height:  100%;
+  width:  auto;
+}
+/*Styling the aside element*/
+.grid main section:nth-child(4) aside{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 153px;
+}
+/*Styling the text element*/
+.grid main section:nth-child(4) div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+/*Styling the text*/
+.grid main section:nth-child(4) div h2{
+  color: black;
+  font-size:25px;
+}
+
+
+/*Styling the footer*/
+.grid footer{
+  grid-area: footer;
+  background-color: white;;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+/*Styling the text in footer*/
+.grid footer h4{
+  color: black;
+  font-size: 50px;
+}
+
+/*Styling the logos*/
+.grid footer nav{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height: auto;;
+  width: auto;
+}
+.grid footer nav div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: auto;
+}
+.grid footer nav div a img{
+  display: flex;
+  height: 50px;
+  padding: 10px;
+  width: auto;
+}
+/*Styling the footer*/
+.grid footer{
+  margin-top: 100px;
+  grid-area: footer;
+  background-color:#efcca2;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border-top: 5px solid gray;
+}
+/*Styling the text in footer*/
+.grid footer h4{
+  color: black;
+  font-size: 50px;
+}
+
+/*Styling the logos*/
+.grid footer nav{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  height: auto;;
+  width: auto;
+}
+.grid footer nav div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: auto;
+}
+.grid footer nav div a img{
+  display: flex;
+  height: 40px;
+  padding: 8px;
+  width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************/
+/*****Responsive Styling*****/
+/****************************/
+
+/*The common viewports are 320px, 480px, 600px, 768px, 1024px, and 1200px*/
+/*Styling for 1200px*/
+@media screen and (max-width: 1200px){
+/*styling the header*/
+.grid header{
+  max-width: 1200px;
+  height: 110px;
+}
+.grid header div img{
+  padding: 5px 10px;
+  height: 90px;
+}
+.grid header nav ul li{
+  padding: 0px 10px;
+}
+
+/*styling the main*/
+/*styling the masthead*/
+.grid main section:nth-child(1){
+  max-width: 1200px;
+  height: 100vh;
+}
+/*styling the second section*/
+.grid main section:nth-child(2){
+  max-width: 1200px;
+  height: 500px;
+  margin-top: -300px;
+}
+/*fixing the img and the text*/
+.grid main section:nth-child(2) img{
+  margin-top: 50px;
+  height: 400px;
+}
+.grid main section:nth-child(2) aside{
+  height: 100%;
+}
+.grid main section:nth-child(2) aside p{
+  margin-top: -37px;
+}
+/*styling the third section*/
+.grid main section:nth-child(3){
+  max-width: 1200px;
+  height: 500px;
+  margin-top: -300px;
+}
+/*fixing the img and the text*/
+.grid main section:nth-child(3) div img{
+  margin-top: 20px;
+  margin-left: -110px;
+}
+.grid main section:nth-child(3) aside{
+  max-width: 100%;
+  height: 100%;
+}
+.grid main section:nth-child(3) aside p{
+  margin-top: 20px;
+}
+/*styling the forth section*/
+/*styling the second section*/
+.grid main section:nth-child(4){
+  max-width: 1200px;
+  height: 400px;
+  margin-top: -300px;
+}
+.grid main section:nth-child(4) div{
+  height: 100%;
+  max-width: 1200px;
+  justify-content: start;
+  padding-left: 100px;
+  align-items: center;
+  padding-top: 100px;
+}
+
+/*Styling the footer*/
+.grid footer{
+  max-width: 1200px;
+  height: auto;
+  margin-top: -200px;
+}
+}
+
+
+/*styling for 1024px*/
+@media screen and (max-width: 1024px){
+.grid header{
+  max-width: 1024px;
+  height: 110px;
+}
+.grid header div img{
+  padding: 5px 10px;
+  height: 90px;
+}
+.grid header nav ul li{
+  padding: 0px 10px;
+}
+
+/*styling the main*/
+/*styling the masthead*/
+.grid main section:nth-child(1){
+  max-width: 1024px;
+  height: 100vh;
+}
+/*styling the second section*/
+.grid main section:nth-child(2){
+  max-width: 1024px;
+  height: 500px;
+  margin-top: -300px;
+}
+/*fixing the img and the text*/
+.grid main section:nth-child(2) img{
+  margin-top: 50px;
+  height: 300px;
+}
+.grid main section:nth-child(2) aside{
+  height: 100%;
+}
+.grid main section:nth-child(2) aside p{
+  margin-top: -37px;
+}
+/*styling the third section*/
+.grid main section:nth-child(3){
+  max-width: 1024px;
+  height: 500px;
+  margin-top: -300px;
+}
+/*fixing the img and the text*/
+.grid main section:nth-child(3) div img{
+  margin-top: 20px;
+  margin-left: -210px;
+  height: 450px;
+
+}
+.grid main section:nth-child(3) aside{
+  max-width: 100%;
+  height: 100%;
+  margin-top: -100px;
+}
+.grid main section:nth-child(3) aside p{
+  margin-top: 20px;
+}
+/*styling the forth section*/
+/*styling the second section*/
+.grid main section:nth-child(4){
+  max-width: 1024px;
+  height: 400px;
+  margin-top: -300px;
+}
+.grid main section:nth-child(4) div{
+  height: 100%;
+  max-width: 1024px;
+  justify-content: start;
+  padding-left: 80px;
+  align-items: center;
+  padding-top: 100px;
+}
+.grid main section:nth-child(4) div h2{
+  font-size: 20px;
+}
+/*Styling the footer*/
+.grid footer{
+  max-width: 1024px;
+  height: auto;
+  margin-top: -200px;
+}
+}
+
+
+/*styling for 768px*/
+@media screen and (max-width: 768px){
+/*styling the header*/
+.grid header{
+  max-width: 768px;
+  height: 110px;
+}
+.grid header div img{
+  padding: 5px 10px;
+  height: 90px;
+}
+.grid header nav ul li{
+  padding: 0px 10px;
+}
+
+/*styling the main*/
+/*styling the masthead*/
+.grid main section:nth-child(1){
+  max-width: 768px;
+  height: 100vh;
+}
+/*styling the second section*/
+.grid main section:nth-child(2){
+  max-width: 768px;
+  height: 500px;
+  margin-top: -350px;
+}
+/*fixing the img and the text*/
+.grid main section:nth-child(2) img{
+  margin-top: 50px;
+  padding-top: 50px;
+  height: 300px;
+  margin-left: -120px;
+}
+.grid main section:nth-child(2) aside{
+  height: 100%;
+  margin-top: 25px;
+}
+  .grid main section:nth-child(2) aside h2{
+    font-size: 35px;
+  }
+.grid main section:nth-child(2) aside p{
+  margin-top: -20px;
+  font-size: 15px;
+}
+/*styling the third section*/
+.grid main section:nth-child(3){
+  max-width: 768px;
+  height: 500px;
+  margin-top: -450px;
+}
+/*fixing the img and the text*/
+.grid main section:nth-child(3) div img{
+  margin-top: 20px;
+  margin-left: -210px;
+  height: 350px;
+
+}
+.grid main section:nth-child(3) aside{
+  max-width: 100%;
+  height: 100%;
+  margin-top: -50px;
+  padding-left: 50px;
+}
+  .grid main section:nth-child(3) aside h2{
+    font-size: 30px;
+  }
+.grid main section:nth-child(3) aside p{
+  margin-top: 20px;
+  font-size: 15px;
+}
+/*styling the forth section*/
+/*styling the second section*/
+.grid main section:nth-child(4){
+  max-width: 768px;
+  height: 400px;
+  margin-top: -650px;
+}
+.grid main section:nth-child(4) div{
+  height: 100%;
+  max-width: 768px;
+  justify-content: start;
+  padding-left: 10px;
+  align-items: center;
+  padding-top: 100px;
+}
+.grid main section:nth-child(4) div h2{
+  font-size: 20px;
+}
+  .grid main section:nth-child(4) aside{
+    padding-left: 20px;
+  }
+/*Styling the footer*/
+.grid footer{
+  max-width: 768px;
+  height: 100px;
+  /*! margin-top: -500px; */
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+}
+
+
+@media screen and (max-width: 600px){
+.grid{
+  display: flex;
+  flex-direction: column;
+}
+
+/*making the elements stack on top of each other*/
+/*styling the header*/
+.grid header{
+  flex-direction: column;
+  height: 200px;
+  max-width: 600px;
+}
+.grid header div{
+  padding-top: 10px;
+  margin-bottom: -30px;
+}
+.grid header img{
+  height: 120px;
+  justify-content: center;
+  padding-left: 47px;
+}
+/*styling the nav*/
+/*removing the space in between the nav buttons*/
+.grid header nav ul li{
+ padding: 0px 10px;
+}
+
+
+/*Styling the main*/
+/*Styling the masthead*/
+/*increasing the height*/
+.grid main section:nth-child(1){
+  height: 100vh;
+  max-width: 600px;
+}
+
+/*next the second section*/
+.grid main section:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  margin-top: -349px;
+  height: 600px;
+  max-width: 600px;
+}
+/*centering the img*/
+.grid main section:nth-child(2) img{
+  padding-left: 270px;
+}
+/*styling the text*/
+.grid main section:nth-child(2) aside{
+  max-width: 600px;
+  height: 100%;
+}
+.grid main section:nth-child(2) aside h2{
+  padding-left: 130px;
+  font-size: 40px;
+}
+.grid main section:nth-child(2) aside p{
+  text-align: center;
+  padding-left: 100px;
+  font-size: 20px;
+}
+
+/*The third section*/
+.grid main section:nth-child(3){
+  display: flex;
+  flex-direction: column-reverse;
+  height: 600px;
+  max-width: 600px;
+  margin-top: 350px;
+  align-items: center;
+}
+/*Centering the img*/
+.grid main section:nth-child(3) div{
+  height: 600px;
+  max-width: 600px;
+}
+.grid main section:nth-child(3) div img{
+  padding-left: 205px;
+}
+/*styling the text*/
+.grid main section:nth-child(3) aside{
+  display: flex;
+  height: 100%;
+  max-width: 600px;
+  padding: 0px;
+}
+.grid main section:nth-child(3) aside h2{
+  padding-left: 105px;
+  padding-top: 65px;
+  font-size: 40px;
+}
+.grid main section:nth-child(3) aside p{
+  text-align: center;
+  padding-left: 100px;
+  font-size: 20px;
+  padding-right: 100px;
+}
+
+/*styling the 4th section*/
+.grid main section:nth-child(4){
+  display: flex;
+  flex-direction: column-reverse;
+  height: auto;
+  max-width: 600px;
+  margin-top: 381px;
+  justify-content: start;
+  align-items: start;
+}
+/*centering the embed link*/
+.grid main section:nth-child(4) aside iframe{
+  display: flex;
+  margin-left: 2px;
+}
+/*the bottom text to be centered*/
+.grid main section:nth-child(4) div h2{
+  display: flex;
+  padding-left: 65px;
+  width: 100%;
+  font-size: 25px;
+}
+
+
+/*Styling the footer*/
+.grid footer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 650px;
+  max-width: 600px;
+  height: 0px;
+  justify-content: center;
+  padding-top: 82px;
+  border-top: 5px solid gray;
+}
+.grid footer h4{
+  margin-top: 107px;
+  font-size: 50px;
+  padding-top: 109px;
+}
+.grid footer div{
+  margin-top: -73px;
+  margin-bottom: 84px;
+}
+}
+
+
+
+/*Adjusts the 480 pixel width*/
+@media screen and (max-width: 480px){
+.grid{
+  display: flex;
+  flex-direction: column;
+}
+
+/*making the elements stack on top of each other*/
+/*styling the header*/
+.grid header{
+  flex-direction: column;
+  height: 200px;
+  max-width: 480px;
+}
+.grid header div{
+  padding-top: 10px;
+  margin-bottom: -30px;
+}
+.grid header img{
+  height: 120px;
+  justify-content: center;
+  padding-left: 47px;
+}
+/*styling the nav*/
+/*removing the space in between the nav buttons*/
+.grid header nav ul li{
+ padding: 0px 10px;
+}
+
+
+/*Styling the main*/
+/*Styling the masthead*/
+/*increasing the height*/
+.grid main section:nth-child(1){
+  height: 100vh;
+  max-width: 480px;
+  }
+
+/*next the second section*/
+.grid main section:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  margin-top: -350px;
+  height: 600px;
+  max-width: 480px;
+  }
+/*centering the img*/
+.grid main section:nth-child(2) img{
+  padding-left: 210px;
+}
+/*styling the text*/
+.grid main section:nth-child(2) aside{
+  max-width: 480px;
+  height: 100%;
+}
+.grid main section:nth-child(2) aside h2{
+  margin-top: -5px;
+  font-size: 30px;
+  padding-left: 115px;
+}
+.grid main section:nth-child(2) aside p{
+  text-align: center;
+  padding-left: 100px;
+  font-size: 18px;
+}
+
+/*The third section*/
+.grid main section:nth-child(3){
+  display: flex;
+  flex-direction: column-reverse;
+  height: 600px;
+  max-width: 480px;
+  margin-top: 400px;
+  align-items: center;
+}
+/*Centering the img*/
+.grid main section:nth-child(3) div{
+  height: 600px;
+  max-width: 480px;
+}
+.grid main section:nth-child(3) div img{
+  padding-left: 210px;
+}
+/*styling the text*/
+.grid main section:nth-child(3) aside{
+  display: flex;
+  height: 100%;
+    max-width: 480px;
+  padding: 0px;
+}
+.grid main section:nth-child(3) aside h2{
+  padding-left: 80px;
+  padding-top: 55px;
+  font-size: 35px;
+}
+.grid main section:nth-child(3) aside p{
+  text-align: center;
+  padding-left: 100px;
+  font-size: 18px;
+  padding-right: 100px;
+}
+
+/*styling the 4th section*/
+.grid main section:nth-child(4){
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+    max-width: 480px;
+  padding-top: 10px;
+  justify-content: start;
+  align-items: start;
+}
+/*centering the embed link*/
+.grid main section:nth-child(4) aside iframe{
+  display: flex;
+  margin-left: -4px;
+  height: 350px;
+  width: 450px;
+  margin-top: -100px
+}
+/*the bottom text to be centered*/
+.grid main section:nth-child(4) div h2{
+  display: flex;
+  padding-left: 50px;
+    max-width: 480px;
+  font-size: 20px;
+}
+
+
+/*Styling the footer*/
+.grid footer{
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 615px;
+    max-width: 480px;
+  height: 0px;
+  justify-content: center;
+  padding-top:  50px;
+  border-top: 5px solid gray;
+}
+.grid footer h4{
+  margin-top: 10px;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+.grid footer div{
+  margin-top: -73px;
+  margin-bottom: 0px;
+}
+}
+
+
+
+
+/*Adjusts the 320 pixel width*/
+@media screen and (max-width: 320px){
+.grid{
+  display: flex;
+  flex-direction: column;
+}
+
+/*making the elements stack on top of each other*/
+/*styling the header*/
+.grid header{
+  flex-direction: column;
+  height: 200px;
+  max-width: 320px;
+}
+.grid header div{
+  padding-top: 10px;
+  margin-bottom: -30px;
+}
+.grid header img{
+  height: 120px;
+  justify-content: center;
+  padding-left: 47px;
+}
+/*styling the nav*/
+/*removing the space in between the nav buttons*/
+.grid header nav ul li{
+ padding: 0px 2px;
+}
+  .grid header nav{
+    margin-left: -35px;
+   }
+
+/*Styling the main*/
+/*Styling the masthead*/
+/*increasing the height*/
+.grid main section:nth-child(1){
+  height: 100vh;
+  max-width: 320px;
+  }
+
+/*next the second section*/
+.grid main section:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  margin-top: -350px;
+  height: 600px;
+  max-width: 320px;
+  }
+/*centering the img*/
+.grid main section:nth-child(2) img{
+  padding-left: 130px;
+  height: 275px;
+}
+/*styling the text*/
+.grid main section:nth-child(2) aside{
+  max-width: 320px;
+  height: 100%;
+}
+.grid main section:nth-child(2) aside h2{
+  margin-top: -5px;
+  font-size: 20px;
+  padding-left: 65px;
+}
+.grid main section:nth-child(2) aside p{
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+/*The third section*/
+.grid main section:nth-child(3){
+  display: flex;
+  flex-direction: column-reverse;
+  height: 600px;
+  max-width: 320px;
+  margin-top: 400px;
+  align-items: center;
+}
+/*Centering the img*/
+.grid main section:nth-child(3) div{
+  height: 600px;
+  max-width: 320px;
+}
+.grid main section:nth-child(3) div img{
+  padding-left: 210px;
+}
+/*styling the text*/
+.grid main section:nth-child(3) aside{
+  display: flex;
+  height: 100%;
+    max-width: 320px;
+  padding: 0px;
+}
+.grid main section:nth-child(3) aside h2{
+  padding-left: 60px;
+  padding-top: 55px;
+  font-size: 20px;
+}
+.grid main section:nth-child(3) aside p{
+  text-align: center;
+  padding-left: 10px;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+/*styling the 4th section*/
+.grid main section:nth-child(4){
+  display: flex;
+  flex-direction: column-reverse;
+  height: 100%;
+    max-width: 320px;
+  padding-top: 10px;
+  justify-content: start;
+  align-items: start;
+}
+/*centering the embed link*/
+.grid main section:nth-child(4) aside iframe{
+  display: flex;
+  margin-left: -3px;
+  height: 350px;
+  width: 270px;
+  margin-top: -100px
+}
+/*the bottom text to be centered*/
+.grid main section:nth-child(4) div h2{
+  display: flex;
+  padding-left: 50px;
+    max-width: 320px;
+  font-size: 20px;
+}
+
+
+/*Styling the footer*/
+.grid footer{
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 615px;
+    max-width: 320px;
+  height: 0px;
+  justify-content: center;
+  padding-top:  50px;
+  border-top: 5px solid gray;
+}
+.grid footer h4{
+  margin-top: -50px;
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+.grid footer div{
+  margin-top: -73px;
+  margin-bottom: 0px;
+}
+}
